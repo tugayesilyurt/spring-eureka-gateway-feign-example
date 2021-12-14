@@ -1,0 +1,24 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery-server
+  security:
+    user:
+      name: admin
+      password: admin
+        
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 5
+  client:
+    registry-fetch-interval-seconds: 5
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

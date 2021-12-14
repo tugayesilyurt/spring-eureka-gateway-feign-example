@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    restart: on-failure
+    image: spring-eureka-server:latest
+    container_name: spring-eureka-server-api
+    ports:
+      - "8761:8761"
