@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  discovery:
+    image: tugayesilyurt/spring-eureka-server
+    container_name: discovery-server
+    build: 
+       context: ./spring-eureka-server
+       dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "8761:8761"
+  gateway-service:
+    image: tugayesilyurt/spring-cloud-gateway
+    container_name: gateway-service
+    build: 
+       context: ./spring-cloud-gateway
+       dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "8090:8090"
+    links:
+      - discovery
+  product-service:
+    image: tugayesilyurt/product-service
+    container_name: product-service
+    build: 
+       context: ./product-service
+       dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "7000:7000"
+    links:
+      - discovery
+  customer-service:
+    image: tugayesilyurt/customer-service
+    container_name: customer-service
+    build: 
+       context: ./customer-service
+       dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "8000:8000"
+    links:
+      - discovery

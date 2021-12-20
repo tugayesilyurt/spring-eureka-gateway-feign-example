@@ -2,7 +2,7 @@ server:
   port: 8761
 spring:
   application:
-    name: discovery-server
+    name: discovery
   security:
     user:
       name: admin
@@ -10,13 +10,15 @@ spring:
         
 eureka:
   instance:
-    hostname: localhost
+    hostname: discovery
     lease-renewal-interval-in-seconds: 5
   client:
     registry-fetch-interval-seconds: 5
     registerWithEureka: false
     fetchRegistry: false
-    service-url:      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    
 management:
   endpoints:
     web:

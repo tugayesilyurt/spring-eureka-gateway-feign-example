@@ -1,4 +1,4 @@
-# Docker Compose Spring Eureka,Spring Cloud API Gateway,FeignClient
+# Docker Compose Spring Eureka,Spring Cloud API Gateway,FeignClient Example
 
 ## Run the System
 We can easily run the whole with only a single command:
@@ -20,4 +20,23 @@ If you need to stop and remove all containers, networks, and all images used by 
 
 * `docker-compose down --rmi all`
 
-## CURLS 
+### EndPoints ###
+
+| Service       | EndPoint                               | Method | Description                                      |
+| ------------- | -----------------------------          | :-----:| ------------------------------------------------ |
+| Customer      | /api/v1/customer/order/{customerid}    | GET    | Return customer order detail               	     |
+| Product       | /api/v1/product/{id}              	 | GET    | Return product detail                      	 |
+
+customer-service microservice connect to product-service via **Feign**
+
+- **Eureka**
+
+You can open Eureka : http://localhost:8761
+username:admin
+password:admin
+
+![Eureka](https://github.com/tugayesilyurt/spring-eureka-gateway-example/assets/eureka.png)
+	
+- **Postman**
+
+![Postman](https://github.com/tugayesilyurt/spring-eureka-gateway-example/assets/postman.png)

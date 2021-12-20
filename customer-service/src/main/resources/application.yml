@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: CUSTOMER-SERVICE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    serviceUrl:
+        defaultZone: ${DISCOVERY_URL:http://admin:admin@discovery:8761}/eureka
+    healthCheck:
+      enabled: true
