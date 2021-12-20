@@ -35,8 +35,8 @@ You can open Eureka : http://localhost:8761
 username:admin
 password:admin
 
-![Eureka](https://github.com/tugayesilyurt/spring-eureka-gateway-example/assets/eureka.png)
+![Eureka](https://github.com/tugayesilyurt/spring-eureka-gateway-feign-example/blob/main/assets/eureka.PNG)
 	
 - **Postman**
 
-![Postman](https://github.com/tugayesilyurt/spring-eureka-gateway-example/assets/postman.png)
+![Postman](https://github.com/tugayesilyurt/spring-eureka-gateway-feign-example/blob/main/assets/postman.PNG)
